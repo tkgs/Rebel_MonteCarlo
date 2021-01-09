@@ -6,7 +6,7 @@ A implementação foi feita em Flask.
 
 <h2>Instalando o programa</h2>
 
-- Instale Python 3.8 (ou mais recente)
+- Instale o Python 3.8 (ou mais recente)
 
 - (recomendado) Crie e ative um virtualenv em um diretório (ex: C:\Rebel_MonteCarlo)
 
