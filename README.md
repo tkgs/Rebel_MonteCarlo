@@ -1,4 +1,4 @@
-<h1>Rebel MonteCarlo</h1>
+<h1>Rebel Monte Carlo</h1>
 <h2>Descrição</h2>
 O objetivo do projeto é criar uma simulação de Monte Carlo em Python para a Rebel.
 Baseando-se nos parâmetros fornecidos pelo usuário (prazo, juros e valor das dívidas, e curva esperada de default), o modelo gera simulações estocásticas e retorna métricas financeiras e outras estatísticas.
