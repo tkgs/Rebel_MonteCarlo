@@ -19,7 +19,7 @@ A implementação foi feita em Flask.
 
 <h2>Rodando o Programa</h2>
 
-- Execute o comando `python run.py`
+- Navegue para o diretório do projeto e execute o comando `python run.py`
 
 - Abra um browser e navegue para <a href="http://localhost:5000">http://localhost:5000</a>
 
