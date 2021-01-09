@@ -10,12 +10,12 @@ A implementação foi feita em Flask.
 
 - (recomendado) Crie e ative um virtualenv em um diretório (ex: C:\Rebel_MonteCarlo)
 
-- Instale os módulos necessários com o comando pip install -r requirements.txt
+- Instale os módulos necessários com o comando `pip install -r requirements.txt`
 
 
 <h2>Rodando o programa</h2>
 
-- Execute o comando python run.py
+- Execute o comando `python run.py`
 
 - Abra um browser e navegue para <a href="http://localhost:5000">http://localhost:5000</a>
 
