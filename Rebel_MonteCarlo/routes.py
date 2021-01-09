@@ -1,7 +1,7 @@
 import pickle
-from montecarlo import montecarlo_simulation
-from flask import render_template, url_for, flash, redirect, request, abort, Response
 from Rebel_MonteCarlo import app
+from Rebel_MonteCarlo.montecarlo import montecarlo_simulation
+from flask import render_template, flash
 from Rebel_MonteCarlo.forms import InputForm
 
 """ Valores usados para preencher o formulario de inputs quando rodar o app pela 1a vez.

@@ -3,10 +3,10 @@
     <div class="content-section">
         <form method="POST" action="">
             {{ form.hidden_tag() }}
-            <h2>Inputs da simulação</h2>
+            <h2><a href="{{ url_for('about') }}#input">Inputs da simulação</a></h2>
             <fieldset class="form-group">
                 <div class="form-group">
-                    {{ form.num_sim.label(class="form-control-label form-control-sm align-middle col-2") }}
+                        {{ form.num_sim.label(class="form-control-label form-control-sm align-middle col-2") }}
                         {% if form.num_sim.errors %}
                             {{ form.num_sim(class="form-control form-control-sm is-invalid") }}
                             <div class="invalid-feedback">
@@ -211,7 +211,7 @@
         </form>
     </div>
     {% if output %}
-        <div class="content-section anchor" id="output">
+        <div class="content-section about" id="output">
             {% with messages = get_flashed_messages(with_categories=true) %}
                 {% if messages %}
                     {% for category, message in messages %}
@@ -221,7 +221,7 @@
                     {% endfor %}
                 {% endif %}
             {% endwith %}
-            <h2>Outputs da simulação</h2>
+            <h2><a href="{{ url_for('about') }}#output">Outputs da simulação</a></h2>
             <h5><a href="{{ url_for('about')}}#irr">IRR (com default):</a> {{ "{:.2f} %a.m.".format(output[0][0]*100) }}
             <br><a href="{{ url_for('about')}}#irr_semdefault">IRR (sem default):</a> {{ "{:.2f} %a.m.".format(output[0][1]*100) }}
             <br><a href="{{ url_for('about')}}#duration">Duration:</a> {{ "{:.1f} meses".format(output[5]) }}

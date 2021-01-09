@@ -3,6 +3,7 @@ from io import BytesIO
 import numpy as np
 from Rebel_MonteCarlo.utils import montecarlo, calc_pmt, montecarlo_bool, calc_irr, calc_payback, calc_duration, calc_dv01, create_figure
 
+
 def montecarlo_simulation(prazo, juros, divida, n_sim=1000, curva_default=[0]):
 
     prazo_min = int(prazo[0])
