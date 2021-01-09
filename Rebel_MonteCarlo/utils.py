@@ -30,6 +30,7 @@ def calc_pmt(PV, i, n):
     return round(PV * ((1+i)**n * i) / ((1+i)**n - 1),2)
 
 def calc_irr(cashflows):
+    # Taxa interna de retorno
     return npf.irr(cashflows)
 
 def calc_payback(cashflows):
@@ -51,6 +52,7 @@ def calc_payback(cashflows):
     return A + (B / C)
 
 def calc_duration(cashflows, rate):
+    # Macauley duration
     duration = 0
     for t, c in enumerate(cashflows[1:], start=1):
         df = 1 / (1 + rate) ** t
@@ -58,17 +60,12 @@ def calc_duration(cashflows, rate):
     return duration / cashflows[0] * -1
 
 def calc_dv01(rate, cashflows):
+    # DV01: mudança esperada no valor presente para uma mudança de 1bp na taxa de juros
     return (abs(npf.npv(rate + 0.0001, cashflows)) + abs(npf.npv(rate - 0.0001, cashflows))) / 2
 
-def number_format(num):
-    formatos = ['', 'mil', 'milhões']
-    magnitude = 0
-    while abs(num) >= 1000 and magnitude < len(formatos)-1:
-        magnitude += 1
-        num /= 1000.0
-    return '{:.2f} {}'.format(num, formatos[magnitude])
-
 def create_subplot(axis, x, title, xlabel, bins=15):
+    # Cria os histogramas e calcula estatísticas dos inputs gerados pela simulação
+
     mu = np.mean(x)
     median = np.median(x)
     sigma = np.std(x)
@@ -93,8 +90,8 @@ def create_subplot(axis, x, title, xlabel, bins=15):
         horizontalalignment = 'right'
     axis.text(x_text, 0.8, textstr, transform=axis.transAxes, fontsize=8, horizontalalignment=horizontalalignment)
 
-def create_figure(prazos, juros, dividas, cashflows):
-    # Cria instancia do gráfico e ajusta as margens
+def create_figure(prazos, juros, dividas):
+    # Cria a instância do gráfico e ajusta margens
     fig = Figure(figsize=(11,3))
     fig.subplots_adjust(bottom=0.18, top=0.9, left=0.05, right=0.95)
 
@@ -102,9 +99,4 @@ def create_figure(prazos, juros, dividas, cashflows):
     create_subplot(fig.add_subplot(1, 3, 1), prazos, 'Prazos', 'Meses')
     create_subplot(fig.add_subplot(1, 3, 2), juros, 'Juros', '% a.m.')
     create_subplot(fig.add_subplot(1, 3, 3), dividas, 'Dívidas', 'R$')
-
-    # axis = fig.add_subplot(3, 2, 4)
-    # axis.bar(range(1, len(cashflows)), cashflows[1:] / 1000)
-    # axis.set_title('PMTs')
-    # axis.set_xlabel('R$ mil')
     return fig

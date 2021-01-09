@@ -78,7 +78,7 @@ def montecarlo_simulation(prazo, juros, divida, n_sim=1000, curva_default=[0]):
     curva_default_str = curva_default_str[:-1]
 
     # Gera os gráficos e os armazena em 'data'
-    fig = create_figure(prazos, juros, dividas, cashflows_total)
+    fig = create_figure(prazos, juros, dividas)
     buf = BytesIO()
     fig.savefig(buf, format="png")
     data = base64.b64encode(buf.getbuffer()).decode("ascii")
