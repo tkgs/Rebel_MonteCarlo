@@ -4,6 +4,15 @@ O objetivo do projeto é criar uma simulação de Monte Carlo em Python para a R
 Baseando-se nos parâmetros fornecidos pelo usuário (prazo, juros e valor das dívidas, e curva esperada de default), o modelo gera simulações estocásticas e retorna métricas financeiras e outras estatísticas.
 A implementação foi feita em Flask.
 
+<h2>Instalando o programa</h2>
+- Instale Python 3.8 (ou mais recente)
+- (recomendado) Crie e ative um virtualenv em um diretório (ex: C:\Python\Rebel_MonteCarlo)
+- Instale os módulos necessários com o comando pip install -r requirements.txt
+
+<h2>Rodando o programa></h2>
+- Execute o comando python run.py
+- Abra um browser e navegue para <a href="http://localhost:5000">
+
 <h2>Inputs</h2>
 O usuário preenche os inputs da simulação através via web browser.
 Os parâmetros de input são então considerados para gerar valores aleatórios via Monte Carlo. O modelo assume que as variáveis seguem uma distribuição normal truncada pelos valores mínimo e máximo fornecidos. Desse modo, se um número sorteado estiver fora do range mínimo e máximo permitido, outro número é sorteado.
