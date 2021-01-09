@@ -1,37 +1,39 @@
 {% extends "layout.html" %}
 {% block content %}
-    <h2>Inputs</h2>
-    <p><h5><a class="anchor" name="num_sim">Número de simulações</a></h5>
-        Número de dívidas que serão geradas na simulação. Cada dívida irá possuir um valor aleatório de prazo, juros e valor de dívida.
-    <p><h5><a class="anchor" name="prazo">Prazo da dívida (mín, máx, média, desvio padrão)</a></h5>
-        Prazo da dívida em meses.
-    <p><h5><a class="anchor" name="juros">Taxa de juros (mín, máx, média, desvio padrão)</a></h5>
-        Taxa de juros da dívida, em % a.m.
-    <p><h5><a class="anchor" name="divida">Valor da dívida (mín, máx, média, desvio padrão)</a></h5>
-        Valor do empréstimo, em R$. A simulação gera apenas valores múltiplos de R$ 1 mil.
-    <p><h5><a class="anchor" name="curva_default_input">Curva de default (lista de valores)</a></h5>
-        Valor esperado de default para cada mês, em %. Não é necessário preencher valores para todos os meses. Nesse caso, o modelo assume o último valor fornecido como um valor terminal que irá valer para todos os meses subsequentes.
-
-    <br><br>
-
-    <h2>Outputs</h2>
-    <p><h5><a class="anchor" name="irr">IRR (com default)</a></h5>
-        Taxa interna de retorno do somatório de cashflows das dívidas, considerando os eventos aleatórios de default.
-    <p><h5><a class="anchor" name="irr_semdefault">IRR (sem default)</a></h5>
-        Taxa interna de retorno do somatório de cashflows das dívidas, considerando default nulo.
-    <p><h5><a class="anchor" name="duration">Duration</a></h5>
-        Macauley duration do portfólio de dívidas, em meses.
-    <p><h5><a class="anchor" name="payback">Payback</a></h5>
-        Payback simples do portfólio, em meses.
-    <p><h5><a class="anchor" name="dv01">DV01</a></h5>
-        Mudança esperada no Valor Presente do portfólio para uma mudança de 1bp na taxa de juros, em R$.
-    <p><h5><a class="anchor" name="total_dividas">Total dívidas</a></h5>
-        Somatório das dívidas (desembolso inicial), em R$.
-    <p><h5><a class="anchor" name="net_cashflows">Net cashflows</a></h5>
-        Somatório das dívidas e dos pagamentos recebidos, em R$.
-    <p><h5><a class="anchor" name="graficos">Gráficos e estatísticas</a></h5>
-        Histogramas dos prazos, juros e dívidas geradas pela simulação. A linha vertical indica a média dos valores sorteados.
-    <p><h5><a class="anchor" name="curva_default">Curva de default</a></h5>
-        A curva efetivamente usada na simulação, que pode ser diferente da curva inputada caso o número de meses fornecidos seja insuficiente.
+    <div class="content-section" id="input">
+        <h2>Inputs</h2>
+        <p><h5><a class="anchor" name="num_sim">Número de simulações</a></h5>
+            Número de dívidas que serão geradas na simulação. Cada dívida irá possuir um valor aleatório de prazo, juros e valor de dívida.
+        <p><h5><a class="anchor" name="prazo">Prazo da dívida (mín, máx, média, desvio padrão)</a></h5>
+            Prazo da dívida em meses.
+        <p><h5><a class="anchor" name="juros">Taxa de juros (mín, máx, média, desvio padrão)</a></h5>
+            Taxa de juros da dívida, em % a.m.
+        <p><h5><a class="anchor" name="divida">Valor da dívida (mín, máx, média, desvio padrão)</a></h5>
+            Valor do empréstimo, em R$. A simulação gera apenas valores múltiplos de R$ 1 mil.
+        <p><h5><a class="anchor" name="curva_default_input">Curva de default (lista de valores)</a></h5>
+            Valor esperado de default para cada mês, em %. Não é necessário preencher valores para todos os meses. Nesse caso, o modelo assume o último valor fornecido como um valor terminal que irá valer para todos os meses subsequentes.
+    </div>
+    <br>
+    <div class="content-section" id="output">
+        <h2>Outputs</h2>
+        <p><h5><a class="anchor" name="irr">IRR (com default)</a></h5>
+            Taxa interna de retorno do somatório de cashflows das dívidas, considerando os eventos aleatórios de default.
+        <p><h5><a class="anchor" name="irr_semdefault">IRR (sem default)</a></h5>
+            Taxa interna de retorno do somatório de cashflows das dívidas, considerando default nulo.
+        <p><h5><a class="anchor" name="duration">Duration</a></h5>
+            Macauley duration do portfólio de dívidas, em meses.
+        <p><h5><a class="anchor" name="payback">Payback</a></h5>
+            Payback simples do portfólio, em meses.
+        <p><h5><a class="anchor" name="dv01">DV01</a></h5>
+            Mudança esperada no Valor Presente do portfólio para uma mudança de 1bp na taxa de juros, em R$.
+        <p><h5><a class="anchor" name="total_dividas">Total dívidas</a></h5>
+            Somatório das dívidas (desembolso inicial), em R$.
+        <p><h5><a class="anchor" name="net_cashflows">Net cashflows</a></h5>
+            Somatório das dívidas e dos pagamentos recebidos, em R$.
+        <p><h5><a class="anchor" name="graficos">Gráficos e estatísticas</a></h5>
+            Histogramas dos prazos, juros e dívidas geradas pela simulação. A linha vertical indica a média dos valores sorteados.
+        <p><h5><a class="anchor" name="curva_default">Curva de default considerada</a></h5>
+            A curva efetivamente usada na simulação, que pode ser diferente da curva inputada caso o número de meses fornecidos seja insuficiente.
+    </div>
     <br><br><br><br><br><br><br><br><br><br>
 {% endblock content %}
