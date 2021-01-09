@@ -4,7 +4,7 @@ O objetivo do projeto é criar uma simulação de Monte Carlo em Python para a R
 Baseando-se nos parâmetros fornecidos pelo usuário (prazo, juros e valor das dívidas, e curva esperada de default), o modelo gera simulações estocásticas e retorna métricas financeiras e outras estatísticas.
 A implementação foi feita em Flask.
 
-<h2>Instalando o programa</h2>
+<h2>Instalando o Programa</h2>
 
 - Instale o Python 3.8 (ou mais recente)
 
@@ -15,7 +15,7 @@ A implementação foi feita em Flask.
 - Instale os módulos necessários com o comando `pip install -r requirements.txt`
 
 
-<h2>Rodando o programa</h2>
+<h2>Rodando o Programa</h2>
 
 - Execute o comando `python run.py`
 
