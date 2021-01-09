@@ -21,12 +21,20 @@ Os parâmetros de input são então considerados para gerar valores aleatórios 
 Ex: supondo que o número de simulações seja 100 e que o default no primeiro mês seja 5%, espera-se que 5 dos 100 pagamentos do primeiro mês não serão recebidos (o valor real irá depender da aleatoriedade da simulação). A premissa usada é que os pagamentos mensais são independentes e que o valor das parcelas não é reajustado em caso de default. Assim, caso aconteça um evento de default, esse valor é efetivamente perdido e não será recuperado posteriormente.
 
 <h2>Outputs</h2>
-<h3>Métricas financeiras:</h3>
 - IRR (com default): Taxa interna de retorno do somatório de cashflows das dívidas, considerando os eventos aleatórios de default.
+
 - IRR (sem default): Taxa interna de retorno do somatório de cashflows das dívidas, considerando 100% de adimplência.
+
 - Duration: Macauley duration do portfólio de dívidas, em meses.
+
 - Payback: Payback simples do portfólio, em meses.
+
 - DV01: Mudança esperada no Valor Presente do portfólio para uma mudança de 1bp na taxa de juros, em R$.
+
 - Total dívidas: Somatório das dívidas (desembolso inicial), em R$.
+
 - Net cashflows: Somatório das dívidas e dos pagamentos recebidos, em R$.
+
 - Gráficos e estatísticas: Histogramas dos prazos, juros e dívidas geradas pela simulação. A linha vertical indica a média dos valores sorteados.
+
+- Curva de default: a curva efetivamente usada na simulação, que pode ser diferente da curva inputada caso o número de meses fornecidos seja insuficiente.
