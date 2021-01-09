@@ -37,6 +37,7 @@ Os parâmetros de input são então considerados para gerar valores aleatórios 
 Ex: supondo que o número de simulações seja 100 e que o default no primeiro mês seja 5%, espera-se que 5 dos 100 pagamentos do primeiro mês não serão recebidos (o valor real irá depender da aleatoriedade da simulação). A premissa usada é que os pagamentos mensais são independentes e que o valor das parcelas não é reajustado em caso de default. Assim, caso aconteça um evento de default, esse valor é efetivamente perdido e não será recuperado posteriormente.
 
 <h2>Outputs</h2>
+
 - IRR (com default): Taxa interna de retorno do somatório de cashflows das dívidas, considerando os eventos aleatórios de default.
 
 - IRR (sem default): Taxa interna de retorno do somatório de cashflows das dívidas, considerando 100% de adimplência.
