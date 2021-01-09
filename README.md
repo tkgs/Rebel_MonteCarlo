@@ -5,14 +5,16 @@ Baseando-se nos parâmetros fornecidos pelo usuário (prazo, juros e valor das d
 A implementação foi feita em Flask.
 
 <h2>Instalando o programa</h2>
+
 - Instale Python 3.8 (ou mais recente)
 
-- (recomendado) Crie e ative um virtualenv em um diretório (ex: C:\Python\Rebel_MonteCarlo)
+- (recomendado) Crie e ative um virtualenv em um diretório (ex: C:\Rebel_MonteCarlo)
 
 - Instale os módulos necessários com o comando pip install -r requirements.txt
 
 
 <h2>Rodando o programa></h2>
+
 - Execute o comando python run.py
 
 - Abra um browser e navegue para <a href="http://localhost:5000">http://localhost:5000</a>
