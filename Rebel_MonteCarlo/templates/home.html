@@ -224,7 +224,7 @@
             <h2>Outputs da simulação</h2>
             <h5><a href="{{ url_for('about')}}#irr">IRR (com default):</a> {{ "{:.2f} %a.m.".format(output[0][0]*100) }}
             <br><a href="{{ url_for('about')}}#irr_semdefault">IRR (sem default):</a> {{ "{:.2f} %a.m.".format(output[0][1]*100) }}
-            <br><a href="{{ url_for('about')}}#duration">Duration:</a> {{ "{:.1f} meses".format(output[5][0]) }}
+            <br><a href="{{ url_for('about')}}#duration">Duration:</a> {{ "{:.1f} meses".format(output[5]) }}
             {% if output[4] > 0 %}
                 <br><a href="{{ url_for('about')}}#payback">Payback:</a> {{ "{:.1f} meses".format(output[4]) }}
             {% else %}

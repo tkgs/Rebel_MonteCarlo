@@ -1,5 +1,6 @@
 import random
 import numpy as np
+import numpy_financial as npf
 from matplotlib.figure import Figure
 
 def montecarlo(min, med, max, std, round_pts):
@@ -20,14 +21,16 @@ def montecarlo(min, med, max, std, round_pts):
             rand = max
     return rand
 
-def calc_pmt(PV, i, n):
-    # Calcula o PMT da divida usando a formula Price
-    return round(PV * ((1+i)**n * i) / ((1+i)**n - 1),2)
-
 def montecarlo_bool(prob):
     # Se rand < prob, retorna 0 (default). Caso contrario, retorna 1 (nao default)
     return 0 if random.random() < prob else 1
 
+def calc_pmt(PV, i, n):
+    # Calcula o PMT da divida usando a formula Price
+    return round(PV * ((1+i)**n * i) / ((1+i)**n - 1),2)
+
+def calc_irr(cashflows):
+    return npf.irr(cashflows)
 
 def calc_payback(cashflows):
     # Payback simples: tempo para recuperar o principal investido
@@ -54,6 +57,8 @@ def calc_duration(cashflows, rate):
         duration += df * c * t
     return duration / cashflows[0] * -1
 
+def calc_dv01(rate, cashflows):
+    return (abs(npf.npv(rate + 0.0001, cashflows)) + abs(npf.npv(rate - 0.0001, cashflows))) / 2
 
 def number_format(num):
     formatos = ['', 'mil', 'milhões']
