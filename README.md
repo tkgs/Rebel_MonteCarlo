@@ -54,4 +54,4 @@ Ex: supondo que o número de simulações seja 100 e que o default no primeiro m
 
 - Gráficos e estatísticas: Histogramas dos prazos, juros e dívidas geradas pela simulação. A linha vertical indica a média dos valores sorteados.
 
-- Curva de default: a curva efetivamente usada na simulação, que pode ser diferente da curva inputada caso o número de meses fornecidos seja insuficiente.
+- Curva de default considerada: a curva efetivamente usada na simulação, que pode ser diferente da curva inputada caso o número de meses fornecidos seja insuficiente.
