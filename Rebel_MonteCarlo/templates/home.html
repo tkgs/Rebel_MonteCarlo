@@ -6,7 +6,7 @@
             <h2>Inputs da simulação</h2>
             <fieldset class="form-group">
                 <div class="form-group">
-                        {{ form.num_sim.label(class="form-control-label form-control-sm align-middle col-2") }}
+                    {{ form.num_sim.label(class="form-control-label form-control-sm align-middle col-2") }}
                         {% if form.num_sim.errors %}
                             {{ form.num_sim(class="form-control form-control-sm is-invalid") }}
                             <div class="invalid-feedback">
@@ -19,7 +19,7 @@
                     {% endif %}
                 </div>
                 <br>
-                <legend class="">Prazo da dívida (meses)</legend>
+                <legend class=""><a href="{{ url_for('about') }}#prazo">Prazo da dívida (meses)</a></legend>
                 <div class="form-group">
                         {{ form.prazo_min.label(class="form-control-label form-control-sm col-2") }}
                         {% if form.prazo_min.errors %}
@@ -75,7 +75,7 @@
             </fieldset>
             <br>
             <fieldset class="form-group">
-                <legend class="">Taxa de juros (% a.m.)</legend>
+                <legend class=""><a href="{{ url_for('about') }}#juros">Taxa de juros (% a.m.)</a></legend>
                 <div class="form-group">
                         {{ form.juros_min.label(class="form-control-label form-control-sm col-2") }}
                         {% if form.juros_min.errors %}
@@ -131,7 +131,7 @@
             </fieldset>
             <br>
             <fieldset class="form-group">
-                <legend class="">Valor da dívida (R$)</legend>
+                <legend class=""><a href="{{ url_for('about') }}#divida">Valor da dívida (R$)</a></legend>
                 <div class="form-group">
                         {{ form.divida_min.label(class="form-control-label form-control-sm col-2") }}
                         {% if form.divida_min.errors %}
@@ -187,7 +187,7 @@
             </fieldset>
             <br>
             <fieldset class="form-group">
-                <legend class="">Curva de default</legend>
+                <legend class=""><a href="{{ url_for('about') }}#curva_default_input">Curva de default</a></legend>
                 <div class="form-group">
                         {{ form.curva_default.label(class="form-control-label form-control-sm col-2") }}
                         {% if form.curva_default.errors %}
@@ -222,20 +222,20 @@
                 {% endif %}
             {% endwith %}
             <h2>Outputs da simulação</h2>
-            <h5><a href="{{ url_for('about')}}#irr">IRR (com default): </a>{{ "{:.2f} %a.m.".format(output[0][0]*100) }}
-            <br>{{ "IRR (sem default): {:.2f} %a.m.".format(output[0][1]*100) }}
-            <br>{{ "Duration: {:.1f} meses".format(output[5][0]) }}
+            <h5><a href="{{ url_for('about')}}#irr">IRR (com default):</a> {{ "{:.2f} %a.m.".format(output[0][0]*100) }}
+            <br><a href="{{ url_for('about')}}#irr_semdefault">IRR (sem default):</a> {{ "{:.2f} %a.m.".format(output[0][1]*100) }}
+            <br><a href="{{ url_for('about')}}#duration">Duration:</a> {{ "{:.1f} meses".format(output[5][0]) }}
             {% if output[4] > 0 %}
-                <br>{{ "Payback: {:.1f} meses".format(output[4]) }}
+                <br><a href="{{ url_for('about')}}#payback">Payback:</a> {{ "{:.1f} meses".format(output[4]) }}
             {% else %}
-                <br>{{ "Payback: N/A".format(output[4]) }}
+                <br><a href="{{ url_for('about')}}#payback">Payback:</a> N/A
             {% endif %}
-            <br>{{ "DV01: R$ {:,.0f}".format(output[6]) }}
-            <br>{{ "Total dívidas: R$ {:,.0f}".format(output[2]) }}
-            <br>{{ "Net cashflows: R$ {:,.0f}".format(output[3]) }}</h5>
+            <br><a href="{{ url_for('about')}}#dv01">DV01:</a> R$ {{ "{:,.0f}".format(output[6]) }}
+            <br><a href="{{ url_for('about')}}#total_dividas">Total dívidas:</a> R$ {{ "{:,.0f}".format(output[2]) }}
+            <br><a href="{{ url_for('about')}}#dv01">Net cashflows:</a> R$ {{ "{:,.0f}".format(output[3]) }}</h5>
             <img src="data:image/png;base64,{{ output[7] }}" alt="output simulacao">
             <br><br>
-            <small>Curva de default considerada (mês[prob]): {{ output[1] }}</small>
+            <small><a href="{{ url_for('about')}}#curva_default">Curva de default considerada</a> (mês[prob]): {{ output[1] }}</small>
             <script>
                 document.getElementById('output').scrollIntoView();
             </script>

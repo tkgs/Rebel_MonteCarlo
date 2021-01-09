@@ -42,10 +42,6 @@ a.article-title:hover {
   text-decoration: none;
 }
 
-.article-content {
-  white-space: pre-line;
-}
-
 .article-img {
   height: 65px;
   width: 65px;
@@ -92,5 +88,5 @@ a {
 a:hover {color: inherit;}
 
 .anchor {
-    padding-top: 50px;
+    padding-top: 60px;
 }
