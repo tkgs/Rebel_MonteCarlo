@@ -13,7 +13,7 @@ A implementação foi feita em Flask.
 - Instale os módulos necessários com o comando pip install -r requirements.txt
 
 
-<h2>Rodando o programa></h2>
+<h2>Rodando o programa</h2>
 
 - Execute o comando python run.py
 
