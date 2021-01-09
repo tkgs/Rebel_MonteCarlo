@@ -11,7 +11,7 @@ A implementação foi feita em Flask.
 
 <h2>Rodando o programa></h2>
 - Execute o comando python run.py
-- Abra um browser e navegue para <a href="http://localhost:5000">
+- Abra um browser e navegue para <a href="http://localhost:5000">http://localhost:5000</a>
 
 <h2>Inputs</h2>
 O usuário preenche os inputs da simulação através via web browser.
