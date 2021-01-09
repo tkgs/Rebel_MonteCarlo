@@ -8,9 +8,11 @@ A implementação foi feita em Flask.
 
 - Instale o Python 3.8 (ou mais recente)
 
-- (recomendado) Crie e ative um virtualenv em um diretório (ex: C:\Rebel_MonteCarlo)
+- Crie um diretório para o projeto (ex: C:\Python\Rebel_MonteCarlo)
 
-- No diretório criado, clone o projeto com o comando `git clone https://github.com/tkgs/Rebel_MonteCarlo`
+- Crie e ative um virtualenv no diretório criado. Ex: `python -m venv ./venv` -> `cd venv\Scripts` -> `activate`
+
+- Clone o projeto no diretório do projeto com o comando `git clone https://github.com/tkgs/Rebel_MonteCarlo`
 
 - Instale os módulos necessários com o comando `pip install -r requirements.txt`
 
