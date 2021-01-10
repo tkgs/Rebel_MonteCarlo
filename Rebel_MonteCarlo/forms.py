@@ -6,31 +6,31 @@ from wtforms.validators import InputRequired, NumberRange
 class InputForm(FlaskForm):
 
     num_sim = IntegerField('Número de simulações',
-                           validators=[InputRequired(), NumberRange(min=2)])
+                           validators=[InputRequired(), NumberRange(min=2, max=1000000)])
     prazo_min = DecimalField('Prazo mínimo',
-                           validators=[InputRequired(), NumberRange(min=1)])
+                           validators=[InputRequired(), NumberRange(min=1, max=120)])
     prazo_med = DecimalField('Prazo médio',
-                            validators=[InputRequired(), NumberRange(min=1)])
+                            validators=[InputRequired(), NumberRange(min=1, max=120)])
     prazo_max = DecimalField('Prazo máximo',
-                            validators=[InputRequired(), NumberRange(min=1)])
+                            validators=[InputRequired(), NumberRange(min=1, max=120)])
     prazo_std = DecimalField('Desvio padrão',
                             validators=[InputRequired(), NumberRange(min=0)])
 
     juros_min = DecimalField('Juros mínimo',
-                           validators=[InputRequired(), NumberRange(min=0.01)])
+                           validators=[InputRequired(), NumberRange(min=0.01, max=100)])
     juros_med = DecimalField('Juros médio',
-                            validators=[InputRequired(), NumberRange(min=0.01)])
+                            validators=[InputRequired(), NumberRange(min=0.01, max=100)])
     juros_max = DecimalField('Juros máximo',
-                            validators=[InputRequired(), NumberRange(min=0.01)])
+                            validators=[InputRequired(), NumberRange(min=0.01, max=100)])
     juros_std = DecimalField('Desvio padrão',
                             validators=[InputRequired(), NumberRange(min=0)])
 
     divida_min = DecimalField('Dívida mínima',
-                            validators=[InputRequired(), NumberRange(min=1000)], default=1000)
+                            validators=[InputRequired(), NumberRange(min=1000, max=1000000)], default=1000)
     divida_med = DecimalField('Dívida média',
-                            validators=[InputRequired(), NumberRange(min=1000)], default=15000)
+                            validators=[InputRequired(), NumberRange(min=1000, max=1000000)], default=15000)
     divida_max = DecimalField('Dívida máxima',
-                            validators=[InputRequired(), NumberRange(min=1000)], default=30000)
+                            validators=[InputRequired(), NumberRange(min=1000, max=1000000)], default=30000)
     divida_std = DecimalField('Desvio padrão',
                             validators=[InputRequired(), NumberRange(min=0)], default=5000)
 

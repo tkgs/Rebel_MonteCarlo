@@ -1,3 +1,4 @@
+import time
 import pickle
 from Rebel_MonteCarlo import app
 from Rebel_MonteCarlo.montecarlo import montecarlo_simulation
@@ -10,7 +11,7 @@ default_inputs = [[6, 21, 36, 8],   #prazo (min, med, max, std)
                   [1.9, 3.45, 5, 1], #juros
                   [1000, 15000, 30000, 5000], #divida
                   "5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27", #curva_default (mes1 a mes12)
-                  1000] #numero de simulacoes
+                  10000] #numero de simulacoes
 
 @app.route('/', methods=['GET','POST'])
 @app.route('/home', methods=['GET','POST'])
@@ -41,8 +42,9 @@ def home():
         curva_default = [int(i) for i in curva_default]
 
         # Roda a simulação
+        start_time = time.time()
         output = montecarlo_simulation(prazo=prazo, juros=juros, divida=divida, curva_default=curva_default, n_sim=n_sim)
-        flash('Simulação executada com sucesso! Número de simulações: ' + str(n_sim), 'success')
+        flash('Simulação executada em {:.0f}s. Número de simulações: {:,}.'.format(time.time() - start_time, n_sim), 'success')
     else:
         output = None
     return render_template('home.html', form=form, input=input, output=output)

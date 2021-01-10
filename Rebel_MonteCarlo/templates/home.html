@@ -233,6 +233,7 @@
             <br><a href="{{ url_for('about')}}#dv01">DV01:</a> R$ {{ "{:,.0f}".format(output[6]) }}
             <br><a href="{{ url_for('about')}}#total_dividas">Total dívidas:</a> R$ {{ "{:,.0f}".format(output[2]) }}
             <br><a href="{{ url_for('about')}}#dv01">Net cashflows:</a> R$ {{ "{:,.0f}".format(output[3]) }}</h5>
+            <h4><a href="{{ url_for('about') }}#graficos">Histogramas e estatísticas</a></h4>
             <img src="data:image/png;base64,{{ output[7] }}" alt="output simulacao">
             <br><br>
             <small><a href="{{ url_for('about')}}#curva_default">Curva de default considerada</a> (mês[prob]): {{ output[1] }}</small>
