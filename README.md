@@ -38,7 +38,7 @@ Os parâmetros de input são então considerados para gerar valores aleatórios 
 
 - Curva de default (lista de valores): valor esperado de default para cada mês, em %. Não é necessário preencher valores para todos os meses. Nesse caso, o modelo assume o último valor fornecido como um valor terminal que irá valer para todos os meses subsequentes.
 
-Ex: supondo que o número de simulações seja 100 e que o default no primeiro mês seja 5%, espera-se que 5 dos 100 pagamentos do primeiro mês não serão recebidos (o valor real irá depender da aleatoriedade da simulação). A premissa usada é que os pagamentos mensais são independentes e que o valor das parcelas não é reajustado em caso de default. Assim, caso aconteça um evento de default, esse valor é efetivamente perdido e não será recuperado posteriormente.
+Ex: Supondo que o número de simulações seja 100 e que o default no primeiro mês seja 5%, espera-se que 5 dos 100 pagamentos do primeiro mês não serão recebidos (o valor real irá depender da aleatoriedade da simulação). A premissa usada é que os pagamentos mensais são independentes e que o valor das parcelas não é reajustado em caso de default. Assim, caso aconteça um evento de default, esse valor é efetivamente perdido e não será recuperado posteriormente.
 
 <h2>Outputs</h2>
 
