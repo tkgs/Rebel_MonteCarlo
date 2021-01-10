@@ -4,6 +4,8 @@
         <h2>Inputs</h2>
         <p><h5><a class="about" name="num_sim">Número de simulações</a></h5>
             Número de dívidas que serão geradas na simulação. Cada dívida irá possuir um valor aleatório de prazo, juros e valor de dívida.
+            O modelo assume que essas variáveis seguem uma distribuição normal truncada pelos valores mínimo e máximo fornecidos.
+            Desse modo, se um número sorteado estiver fora do range mínimo e máximo permitido, outro número é sorteado.
         <p><h5><a class="about" name="prazo">Prazo da dívida (mín, máx, média, desvio padrão)</a></h5>
             Prazo da dívida em meses.
         <p><h5><a class="about" name="juros">Taxa de juros (mín, máx, média, desvio padrão)</a></h5>
